@@ -38,7 +38,9 @@ jobs:
 
     - name: Build with Gradle
 
-      run: ./gradlew :spigot:shadowJar --configure-on-demand
+      uses: gradle/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
+      with:
+        arguments: :spigot:shadowJar --configure-on-demand
 
     - name: Upload Artifact to GitHub Action
 
