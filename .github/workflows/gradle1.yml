@@ -40,18 +40,4 @@ jobs:
 
       continue-on-error: true
 
-    - name: Send file to discord channel
 
-      uses: sinshutu/upload-to-discord@master
-
-      # if last action is fine
-
-      if: steps.build-gradle.outcome == 'success'
-
-      env:
-
-        DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
-
-      with:
-
-        args: build/libs/*.jar
