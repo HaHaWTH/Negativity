@@ -33,8 +33,10 @@ jobs:
     - id: build-gradle
 
       name: Build with Gradle
-
-      run: ./gradlew build
+          
+      run: |
+        ./gradlew init
+        ./gradlew build
 
       # continue even if there is an issue to save all cache
 
